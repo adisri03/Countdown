@@ -12,25 +12,25 @@ body{
 }
 
 h1{
-  color: #fff;
+  color: #32a6a8;
   font-weight: 900;
   font-size: 35px;
   margin: 40px 0px 20px;
 }
 
 h2{
-  color: #fff;
+  color: #32a6a8;
   font-weight: 100;
   font-size: 20px;
   text-align: center;
 }
 	.countdown{
-			font-family: sans-serif;
+	font-family: sans-serif;
 	color: #fff;
 	display: inline-block;
 	font-weight: 150;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
 	}
 	#endtime{
 		padding: 5px;
@@ -38,24 +38,24 @@ h2{
 		font-size: 12px;
 	}
 	.countdown-content{
-		padding: 10px;
+	padding: 10px;
 	border-radius: 3px;
 	background: #4c4c4c;
 	display: inline-block;
 	}
 	.countdown-content span{
-		padding: 15px;
+	padding: 15px;
 	border-radius: 3px;
 	background: #11f0f5;
 	display: inline-block;
 	}
 	.btn{
-		display: block;
+		
 		padding: 3px 20px;
 		margin:10px auto;
 		outline: none;
 		border: none;
-		background: #c00;
+		background: #32a6a8;
 		font-size: 16px;
 		font-weight: bold;
 		color: #0c0d0d;
@@ -66,8 +66,8 @@ h2{
   color: #fff;
   font-size: 20px;
   padding: 20px;
-  background: #fff;;
-  border-radius: 10px;
+  background: #cc0;;
+  border-radius: 15px;
   text-decoration: none;
 }
 
@@ -75,7 +75,7 @@ a:hover{
   background: #fff;;
 }
 	.btn:hover{
-		background: #c00;
+		background: #fff;
 	}
 	.btn-disabled{
         cursor: default;
@@ -99,9 +99,7 @@ footer {
         }
 </style>
 </head>
-
 <body>
-
 <div class="countdown">
   <h2>Date:</h2>
     <input type="text" placeholder="yyyy-mm-dd hh:mm:ss" id="endtime" value=""> 
@@ -113,13 +111,10 @@ footer {
     <span id="minute"></span> Minutes
     <span id="second"></span> Seconds
   </div> 
-  
-  
   <br>
   <br>
   <br>
   <br>
-
   <footer></footer>
 </div>
 
@@ -128,17 +123,17 @@ var timer = null;
 var end;
 var toZero;
 var btn = document.getElementById("btn");
-var oDay = document.getElementById("day");
-var oHour = document.getElementById("hour");
-var oMinute = document.getElementById("minute");
-var oSecond = document.getElementById("second");
+var xDay = document.getElementById("day");
+var xHour = document.getElementById("hour");
+var xMinute = document.getElementById("minute");
+var xSecond = document.getElementById("second");
 var endtime = document.getElementById("endtime");
 var startBtn = document.getElementById("start-count");
-toZero = oDay.innerHTML = oHour.innerHTML = oMinute.innerHTML = oSecond.innerHTML = "00";
+toZero = xDay.innerHTML = xHour.innerHTML = xMinute.innerHTML = xSecond.innerHTML = "00";
 startBtn.onclick = function() {
   end = endtime.value;
   if (!end) {
-    alert("Please enter date！")
+    alert("Please enter the date first！")
     return false;
   };
   countDown();
@@ -165,15 +160,15 @@ function countDown() {　　
       }
     } 
   if (date > 0) {
-    oDay.innerHTML = toDou(day);
-    oHour.innerHTML = toDou(hour);
-    oMinute.innerHTML = toDou(minute);
-    oSecond.innerHTML = toDou(second);
+    xDay.innerHTML = toDou(day);
+    xHour.innerHTML = toDou(hour);
+    xMinute.innerHTML = toDou(minute);
+    xSecond.innerHTML = toDou(second);
   } else {
     btn.className = "";
     btn.className = "btn";
     btn.onclick = function() {
-      alert("oops")
+      alert("Try Again Please!")
     }
     endtime.value = "";
     clearInterval(timer);
